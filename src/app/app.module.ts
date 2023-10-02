@@ -5,22 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CustomRadioButtonComponent } from './custom-radio-button/custom-radio-button.component';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
+import { CustomFormModule } from './custom-form/custom-form.module';
+import { CustomRadioButtonModule } from './custom-radio-button/custom-radio-button.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CustomRadioButtonComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatRadioModule
+    CustomFormModule,
+    CustomRadioButtonModule,
+    MatRadioModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

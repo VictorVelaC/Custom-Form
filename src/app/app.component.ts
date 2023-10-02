@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   form: FormGroup;
@@ -16,13 +21,13 @@ export class AppComponent {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      selectedOption: ['',[Validators.required]],
+      selectedOption: new FormControl('', [Validators.required]),
+      imputField: new FormControl('', [Validators.required]),
     });
   }
 
   onSubmit() {
-    console.log("El formulario es válido: ", this.form.valid);
-    console.log("El valor del formulario es: ", this.form.value);
+    console.log('El formulario es válido: ', this.form.valid);
+    console.log('El valor del formulario es: ', this.form.value);
   }
-
 }

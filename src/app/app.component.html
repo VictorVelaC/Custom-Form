@@ -3,6 +3,11 @@
     formControlName="selectedOption"
     [options]="radioOptions"
   ></app-custom-radio-button>
+  <br />
+  <app-custom-form
+    (control)="form.get('imputField')"
+    formControlName="imputField"
+  ></app-custom-form>
   <button type="submit">Submit</button>
 </form>
-<div>Selected Option: {{ form.get('selectedOption')?.value }}</div>
+<div>Selected Option: {{ form.get("selectedOption")?.value }}</div>

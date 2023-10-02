@@ -1,5 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormControl,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-custom-form',
@@ -8,14 +12,13 @@ import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/f
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      multi:true,
-      useExisting: CustomFormComponent
-    }
-  ]
+      multi: true,
+      useExisting: CustomFormComponent,
+    },
+  ],
 })
-export class CustomFormComponent implements ControlValueAccessor{
-
-  @Input() control: FormControl= new FormControl();
+export class CustomFormComponent implements ControlValueAccessor {
+  @Input() control: FormControl = new FormControl();
 
   constructor() {}
 
@@ -43,5 +46,4 @@ export class CustomFormComponent implements ControlValueAccessor{
 
   private onChange: any = () => {};
   private onTouched: any = () => {};
-
 }
